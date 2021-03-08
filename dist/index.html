@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Jose Rosales | Rock, Paper, Scissors, Lizard, Spock</title>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+
+    <!-- Parte superior (ScoreBoard) -->
+    <div class="scoreboard-top">
+      
+      <!--Score of the player-->
+      <div class="box-score">
+        <h3>YOU</h3>
+        <span id="user-score">0</span>
+      </div>
+
+      <!--Img Title-->
+      <div class="box-title">
+        <img src="./images/logo-bonus.svg" alt="Rock Paper Scissor">
+      </div>
+
+      <!--Score of the house-->
+      <div class="box-score">
+        <h3>COMPUTER</h3>
+        <span id="computer-score">0</span>
+      </div>
+
+    </div>
+    <!--Elementos que no son visibles al comienzo-->
+    <!------------------------------------------>
+    <!--Rules-->
+    <section class="rules">
+      <div class="box-rules">
+        <div class="title-rules">
+          <span>Rules</span>
+          <a href="#close"></a><img src="./images/icon-close.svg" alt="Game's Rules" class="close-rules"></a>
+        </div>
+        <img src="./images/image-rules-bonus.svg" alt="">
+      </div>
+    </section>
+
+    <!--You Picked and The house Picked-->
+
+  
+    <div class="who-win"></div>
+    
+   
+    
+    <!------------------------------------------>
+    <!--Zona de juego-->
+    <div class="choice">
+      <div class="choice__container">
+        <button class="rock circle">
+          <img src="./images/icon-rock.svg" alt="Rock">
+        </button>
+      
+        <button class="paper circle">
+          <img src="./images/icon-paper.svg" alt="Paper">
+        </button>
+  
+        <button class="scissor circle">
+          <img src="./images/icon-scissors.svg" alt="Scissor">
+        </button>
+  
+        <button class="lizard circle">
+          <img src="./images/icon-lizard.svg" alt="Lizard">
+        </button>
+        
+        <button class="spock circle">
+          <img src="./images/icon-spock.svg" alt="Spock">
+        </button>
+      </div>
+      <span class="you-picked">You Picked</span>
+      <span class="the-house-picked">The House Picked</span>
+      <button type="submit" class="play-again">Play Again</button>
+    </div>
+    <!--Rules button-->
+    <div class="btn">Rules</div>
+
+    <!--Script JS-->
+    <script src="./js/main.js"></script>
+  </body>
+
+</html>

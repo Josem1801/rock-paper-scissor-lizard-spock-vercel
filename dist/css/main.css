@@ -1,0 +1,490 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap");
+/*Colors Primary*/
+/*Colors Neutral*/
+/*Variable para Media Query*/
+/*Centrar un elemento en fila*/
+/*Centrar un elemento en columna*/
+/*Mixin para crear el circulo*/
+/*Escalando las imagenes para que sean mas pequeñas*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+}
+
+/*-----------BODY-------------*/
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+  height: 100vh;
+  background-color: #1f3756;
+  background-image: linear-gradient(90deg, #1f3756 0%, #141539 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/*-----------------RULES--------------------*/
+.rules {
+  position: absolute;
+  left: -110%;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .6s ease-in-out;
+}
+
+.rules .box-rules {
+  color: #3b4363;
+  position: relative;
+  min-width: 23em;
+  height: 29em;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-items: space-around;
+  border-radius: .5em;
+  padding: 1.5em;
+  font-weight: 700;
+}
+
+.rules .box-rules .title-rules {
+  padding-bottom: .5em;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 2em;
+  color: #3b4363;
+}
+
+.rules .box-rules .title-rules img {
+  width: 25px;
+  height: 25px;
+  padding: 5px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/*clase toggle-rules añadido en js para slide de las reglas */
+.rules.toggle-rules {
+  left: 0;
+}
+
+@media (max-width: 500px) {
+  .rules {
+    background: white;
+  }
+  .rules .box-rules {
+    height: 80vh;
+    justify-content: space-evenly;
+  }
+  .rules .box-rules .title-rules {
+    justify-content: center;
+  }
+  .rules .box-rules .title-rules img {
+    position: absolute;
+    bottom: 0;
+  }
+}
+
+/*-----------------SCOREBOARD TOP--------------------*/
+.scoreboard-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 35em;
+  border: 3px solid #606e85;
+  padding: .9rem .9rem;
+  border-radius: 1rem;
+}
+
+.scoreboard-top img {
+  width: 6rem;
+}
+
+.scoreboard-top .box-score {
+  width: 7.3rem;
+  height: 6.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: #2a46c0;
+  text-align: center;
+  border-radius: .5rem;
+  font-weight: 700;
+  font-size: .8em;
+}
+
+.scoreboard-top .box-score #user-score, .scoreboard-top .box-score #computer-score {
+  font-size: 3rem;
+  color: #3b4363;
+}
+
+/*MediaQuery del marcador que esta en la parte superior*/
+@media (max-width: 600px) {
+  .scoreboard-top {
+    width: 92%;
+  }
+  .scoreboard-top img {
+    width: 4em;
+  }
+  .scoreboard-top .box-score {
+    width: 6.2rem;
+    height: 5.8rem;
+  }
+  .scoreboard-top .box-score h3 {
+    font-size: 1em;
+  }
+}
+
+/*-----------------CHOICE--------------------*/
+/*Contenedor de las posibles eleccion */
+.choice {
+  position: relative;
+  width: 22rem;
+  height: 22rem;
+  transition: all 1s;
+  /*Accediendo a la imagen del titulo para hacerla mas pequeña*/
+  /*Diseño de los objetos circulares del juego*/
+  /*@Mixin color-cicle($top, $left, $color) */
+}
+
+.choice button img {
+  transform: scale(0.7);
+}
+
+.choice__container {
+  background: url("/dist/images/bg-pentagon.svg") no-repeat;
+  background-size: 300px;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+.choice .spock {
+  position: absolute;
+  top: 6em;
+  left: -0.5rem;
+  border-radius: 10rem;
+  background: white;
+  width: 7.5em;
+  min-width: 4em;
+  height: 7.5em;
+  border: 10px solid #40b9ce;
+  outline: none;
+  box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(64, 185, 206, 0.5);
+  cursor: pointer;
+  transition: box-shadow .2s, top .5s ease-in-out, left .5s, transform  1s;
+  z-index: 1;
+}
+
+.choice .spock:hover {
+  box-shadow: inset 0 0 0px 6px rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(64, 185, 206, 0.5);
+}
+
+.choice .scissor {
+  position: absolute;
+  top: -0.5rem;
+  left: 9.5em;
+  border-radius: 10rem;
+  background: white;
+  width: 7.5em;
+  min-width: 4em;
+  height: 7.5em;
+  border: 10px solid #ec9e0e;
+  outline: none;
+  box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(236, 158, 14, 0.5);
+  cursor: pointer;
+  transition: box-shadow .2s, top .5s ease-in-out, left .5s, transform  1s;
+  z-index: 1;
+}
+
+.choice .scissor:hover {
+  box-shadow: inset 0 0 0px 6px rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(236, 158, 14, 0.5);
+}
+
+.choice .paper {
+  position: absolute;
+  top: 6em;
+  left: 19em;
+  border-radius: 10rem;
+  background: white;
+  width: 7.5em;
+  min-width: 4em;
+  height: 7.5em;
+  border: 10px solid #4865f4;
+  outline: none;
+  box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(72, 101, 244, 0.5);
+  cursor: pointer;
+  transition: box-shadow .2s, top .5s ease-in-out, left .5s, transform  1s;
+  z-index: 1;
+}
+
+.choice .paper:hover {
+  box-shadow: inset 0 0 0px 6px rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(72, 101, 244, 0.5);
+}
+
+.choice .rock {
+  position: absolute;
+  top: 18em;
+  left: 16em;
+  border-radius: 10rem;
+  background: white;
+  width: 7.5em;
+  min-width: 4em;
+  height: 7.5em;
+  border: 10px solid #dc2e4e;
+  outline: none;
+  box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(220, 46, 78, 0.5);
+  cursor: pointer;
+  transition: box-shadow .2s, top .5s ease-in-out, left .5s, transform  1s;
+  z-index: 1;
+}
+
+.choice .rock:hover {
+  box-shadow: inset 0 0 0px 6px rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(220, 46, 78, 0.5);
+}
+
+.choice .lizard {
+  position: absolute;
+  top: 18em;
+  left: 3em;
+  border-radius: 10rem;
+  background: white;
+  width: 7.5em;
+  min-width: 4em;
+  height: 7.5em;
+  border: 10px solid #834fe3;
+  outline: none;
+  box-shadow: inset 0 4px 0 0 rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(131, 79, 227, 0.5);
+  cursor: pointer;
+  transition: box-shadow .2s, top .5s ease-in-out, left .5s, transform  1s;
+  z-index: 1;
+}
+
+.choice .lizard:hover {
+  box-shadow: inset 0 0 0px 6px rgba(0, 0, 0, 0.5), 0 5px 0 0 rgba(131, 79, 227, 0.5);
+}
+
+.choice .clone {
+  top: 40%;
+  left: 3%;
+  transform: scale(2.5);
+  transition: .5s;
+  animation-name: down;
+  animation-duration: .8s;
+  animation-iteration-count: 3;
+}
+
+.choice .shadow {
+  position: absolute;
+  top: 32%;
+  left: 72%;
+  width: 11em;
+  height: 11em;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  animation-name: down;
+  animation-duration: .8s;
+  animation-iteration-count: 3;
+}
+
+.choice .shadow-replace {
+  position: absolute;
+  top: 40%;
+  left: 84%;
+  transform: scale(2.5);
+}
+
+@keyframes down {
+  50% {
+    transform: translateY(80px);
+  }
+}
+
+.choice .you-picked {
+  display: none;
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  z-index: 10;
+  font-size: 1.8em;
+  width: 9em;
+  color: white;
+  font-weight: 600;
+  top: 0%;
+  left: -2%;
+  transition: all .5s;
+}
+
+.choice .the-house-picked {
+  display: none;
+  position: absolute;
+  top: -10%;
+  left: 5%;
+  z-index: 10;
+  font-size: 1.8em;
+  width: 9em;
+  color: white;
+  font-weight: 600;
+  top: 0%;
+  left: 68%;
+  transition: all .5s;
+}
+
+@media (min-width: 800px) {
+  .choice .translate-circle-left {
+    left: -45%;
+  }
+  .choice .translate-circle-right {
+    left: 117%;
+  }
+  .choice .slide-left {
+    left: -50%;
+  }
+  .choice .slide-right {
+    left: 100%;
+  }
+}
+
+.choice .play-again {
+  display: none;
+  position: absolute;
+  right: 17.5%;
+  bottom: 35%;
+  width: 15em;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  height: 3em;
+  border-radius: .5em;
+  border: 2px solid white;
+  color: #2a46c0;
+  cursor: pointer;
+  outline: none;
+  z-index: 9;
+}
+
+.choice .play-again:hover {
+  background: transparent;
+  color: white;
+}
+
+/*----------MediaQuery para todo el contenido de choice*/
+@media (max-width: 800px) {
+  .rock {
+    transform: scale(0.8);
+  }
+  .paper {
+    transform: scale(0.8);
+  }
+  .scissor {
+    transform: scale(0.8);
+  }
+  .lizard {
+    transform: scale(0.8);
+  }
+  .spock {
+    transform: scale(0.8);
+  }
+  .choice .clone {
+    top: 5%;
+    left: 10%;
+    transform: scale(1.5);
+  }
+  .choice .shadow {
+    position: absolute;
+    top: 6%;
+    left: 67%;
+    width: 5em;
+    height: 5em;
+  }
+  .choice .shadow-replace {
+    top: 5%;
+    left: 62%;
+    transform: scale(1.5);
+  }
+  @keyframes down {
+    50% {
+      transform: translateY(-30px);
+    }
+  }
+  .choice .play-again {
+    bottom: 0%;
+  }
+  .choice .you-picked {
+    left: 14%;
+    top: 46%;
+    font-size: 1em;
+  }
+  .choice .the-house-picked {
+    width: 8em;
+    left: 61%;
+    top: 45%;
+    font-size: 1em;
+  }
+}
+
+.who-win {
+  font-size: 2.6em;
+  font-weight: 700;
+  position: absolute;
+  bottom: 45%;
+  color: white;
+  transition: all .6s ease-in;
+}
+
+@media (max-width: 900px) {
+  .who-win {
+    bottom: 23%;
+  }
+}
+
+/*-----------------BUTTON RULES--------------------*/
+/*Estilos para el boton de las reglas*/
+.btn {
+  align-self: flex-end;
+  margin-right: 2em;
+  width: 8em;
+  height: 2.4em;
+  border-radius: .5em;
+  border: 1px solid white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 8;
+}
+
+.btn:hover {
+  background: white;
+  color: #2a46c0;
+}
+
+@media (max-width: 500px) {
+  .btn {
+    align-self: center;
+    margin: 0;
+  }
+}
+/*# sourceMappingURL=main.css.map */
