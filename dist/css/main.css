@@ -542,10 +542,10 @@ body {
     top: 45%;
     font-size: 1em;
   }
-  .choice .sombra1.aurora-house-winner {
+  .choice .sombra1.aurora-you-winner {
     position: absolute;
     top: 0%;
-    left: 5%;
+    left: 6%;
     width: 15em;
     height: 15em;
     border-radius: 50%;
@@ -557,7 +557,7 @@ body {
 }
 
 @media (max-width: 800px) and (max-width: 800px) {
-  .choice .sombra1.aurora-house-winner {
+  .choice .sombra1.aurora-you-winner {
     width: 9em;
     height: 9em;
   }

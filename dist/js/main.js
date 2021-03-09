@@ -44,17 +44,17 @@ function choiceRandom() {
 }
 
 /*Que comimence el Juego! */
-function playGame(choice) {
+function playGame(choiceYou) {
     //Clon que obtengo de la otra funcion, esto para lograr el efecto de animacion
     cloneYou.classList.add('clone');
 
     //Obtengo una eleccion aleatoria de la fucion choiceRandom()
     let computerChoice = choiceRandom()
-
+    console.log(choice, )
     //Verificar si hay un empate antes de comparar
-    if(choice !== computerChoice){
+    if(choiceYou !== computerChoice){
         //Si se cumple la condicion
-        switch(choice + "-" +computerChoice){
+        switch(choiceYou + "-" +computerChoice){
             case 'rock-lizard':
             case 'rock-paper':
             case 'lizard-spock':
@@ -89,8 +89,8 @@ function winner(who,words, increment){
     //Show Play again Button
     playAgain.style.display = "block";
 
-    //Aurora al rededor del ganador
-    setTimeout(() => {
+     //Aurora al rededor del ganador
+     setTimeout(() => {
         if(words === "YOU WIN"){
             aurora.classList.add("aurora-you-winner");
         }
@@ -98,7 +98,6 @@ function winner(who,words, increment){
             aurora.classList.add("aurora-house-winner");
         }
     }, 400)
-
     //Deslizar titulo y botones
     youPicked.classList.add("slide-left")
     housePicked.classList.add("slide-right")
