@@ -32,6 +32,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   align-items: center;
+  overflow: hidden;
 }
 
 /*-----------------RULES--------------------*/
@@ -287,7 +288,7 @@ body {
 .choice .clone {
   top: 40%;
   left: 3%;
-  transform: scale(2.5);
+  transform: scale(2.3);
   transition: .5s;
   animation-name: down;
   animation-duration: .8s;
@@ -311,12 +312,138 @@ body {
   position: absolute;
   top: 40%;
   left: 84%;
-  transform: scale(2.5);
+  transform: scale(2.3);
 }
 
 @keyframes down {
   50% {
     transform: translateY(80px);
+  }
+}
+
+.choice .sombra1.aurora-you-winner {
+  position: absolute;
+  top: 21%;
+  left: -65%;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: rgba(221, 221, 221, 0.1);
+  animation-name: sombras;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  .choice .sombra1.aurora-you-winner {
+    width: 9em;
+    height: 9em;
+  }
+}
+
+.choice .sombra1.aurora-you-winner .sombra2 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: rgba(221, 221, 221, 0.1);
+  animation-name: sombras;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  .choice .sombra1.aurora-you-winner .sombra2 {
+    width: 9em;
+    height: 9em;
+  }
+}
+
+.choice .sombra1.aurora-you-winner .sombra2 .sombra3 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: rgba(221, 221, 221, 0.1);
+  animation-name: sombras;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  .choice .sombra1.aurora-you-winner .sombra2 .sombra3 {
+    width: 9em;
+    height: 9em;
+  }
+}
+
+.choice .sombra1.aurora-house-winner {
+  position: absolute;
+  top: 21%;
+  left: 97%;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: rgba(221, 221, 221, 0.1);
+  animation-name: sombras;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  .choice .sombra1.aurora-house-winner {
+    width: 9em;
+    height: 9em;
+  }
+}
+
+.choice .sombra1.aurora-house-winner .sombra2 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: rgba(221, 221, 221, 0.1);
+  animation-name: sombras;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  .choice .sombra1.aurora-house-winner .sombra2 {
+    width: 9em;
+    height: 9em;
+  }
+}
+
+.choice .sombra1.aurora-house-winner .sombra2 .sombra3 {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 15em;
+  height: 15em;
+  border-radius: 50%;
+  background: rgba(221, 221, 221, 0.1);
+  animation-name: sombras;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 800px) {
+  .choice .sombra1.aurora-house-winner .sombra2 .sombra3 {
+    width: 9em;
+    height: 9em;
+  }
+}
+
+@keyframes sombras {
+  100% {
+    transform: scale(1.27);
   }
 }
 
@@ -384,19 +511,19 @@ body {
   }
   .choice .clone {
     top: 5%;
-    left: 5%;
+    left: 12%;
     transform: scale(1.3);
   }
   .choice .shadow {
     position: absolute;
     top: 6%;
     left: 60%;
-    width: 5em;
-    height: 5em;
+    width: 6em;
+    height: 6em;
   }
   .choice .shadow-replace {
     top: 5%;
-    left: 57%;
+    left: 58%;
     transform: scale(1.3);
   }
   @keyframes down {
@@ -405,7 +532,7 @@ body {
     }
   }
   .choice .you-picked {
-    left: 9%;
+    left: 16%;
     top: 46%;
     font-size: 1em;
   }
@@ -414,6 +541,47 @@ body {
     left: 56%;
     top: 45%;
     font-size: 1em;
+  }
+  .choice .sombra1.aurora-house-winner {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    background: rgba(221, 221, 221, 0.1);
+    animation-name: sombras;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media (max-width: 800px) and (max-width: 800px) {
+  .choice .sombra1.aurora-house-winner {
+    width: 9em;
+    height: 9em;
+  }
+}
+
+@media (max-width: 800px) {
+  .choice .sombra1.aurora-house-winner {
+    position: absolute;
+    top: 0%;
+    left: 52.5%;
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    background: rgba(221, 221, 221, 0.1);
+    animation-name: sombras;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media (max-width: 800px) and (max-width: 800px) {
+  .choice .sombra1.aurora-house-winner {
+    width: 9em;
+    height: 9em;
   }
 }
 
@@ -450,10 +618,10 @@ body {
 
 @media (max-width: 900px) {
   .who-win {
-    bottom: 25%;
+    bottom: 30%;
   }
   .play-again {
-    bottom: 18%;
+    bottom: 23%;
   }
 }
 

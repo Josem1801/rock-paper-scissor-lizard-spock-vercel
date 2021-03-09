@@ -11,6 +11,9 @@ const btnRules = document.querySelector(".btn");
 const closeRules = document.querySelector(".close-rules");
 const showRules = document.querySelector(".rules")
 
+//Aurora que se crea al ganar
+const aurora = document.querySelector(".sombra1")
+
 const choiceContainer = document.querySelector(".choice__container")
 const choice = document.querySelector(".choice")
 const youPicked = document.querySelector(".you-picked")
@@ -26,16 +29,16 @@ let  arr = ['rock', 'paper', 'scissor', 'lizard', 'spock'];
 
 //Creo y guardo la sombra
 let shadowDiv = document.createElement("div");
-let clone1, clone2;
+let cloneYou, cloneHouse;
 
 ///*Funcion para hacer una elección aleatoria*/
 function choiceRandom() {
     let random = Math.floor(Math.random() * arr.length);
-    clone2 = document.querySelector("."+ arr[random]).cloneNode("false");
+    cloneHouse = document.querySelector("."+ arr[random]).cloneNode("false");
     console.log(arr[random])
-    clone2.classList.add("shadow-replace")
+    cloneHouse.classList.add("shadow-replace")
     setTimeout(() => {
-        choice.replaceChild(clone2, shadowDiv)
+        choice.replaceChild(cloneHouse, shadowDiv)
     },2500)
     return arr[random];
 }
@@ -43,8 +46,7 @@ function choiceRandom() {
 /*Que comimence el Juego! */
 function playGame(choice) {
     //Clon que obtengo de la otra funcion, esto para lograr el efecto de animacion
-    clone1.classList.add('clone');
-
+    cloneYou.classList.add('clone');
 
     //Obtengo una eleccion aleatoria de la fucion choiceRandom()
     let computerChoice = choiceRandom()
@@ -86,6 +88,17 @@ function winner(who,words, increment){
     whoWin.innerHTML = words;
     //Show Play again Button
     playAgain.style.display = "block";
+
+    //Aurora al rededor del ganador
+    setTimeout(() => {
+        if(words === "YOU WIN"){
+            aurora.classList.add("aurora-you-winner");
+        }
+        else if(words === "YOU LOSE"){
+            aurora.classList.add("aurora-house-winner");
+        }
+    }, 400)
+
     //Deslizar titulo y botones
     youPicked.classList.add("slide-left")
     housePicked.classList.add("slide-right")
@@ -93,12 +106,16 @@ function winner(who,words, increment){
     document.querySelector(".shadow-replace").classList.add("translate-circle-right")
 } 
 
+function auroraWinner(){
+
+}
+
 function main() {
     
     allCircle.forEach((element, indice) => {
         element.addEventListener('click', (e) => {
-            clone1 = element.cloneNode("false")
-            choice.appendChild(clone1)
+            cloneYou = element.cloneNode("false")
+            choice.appendChild(cloneYou)
             choice.appendChild(shadowDiv).classList.add("shadow")
             choiceContainer.style.display = "none"
             youPicked.style.display = "inline";
@@ -119,14 +136,15 @@ function main() {
         showRules.classList.toggle('toggle-rules') = true;
     }
 
-    //Reiniciar el Juego 
+    //Reiniciar el Juego y Eliminar todas las clases y elementos creados
     playAgain.addEventListener("click", () => {
         choiceContainer.style.display = "block"
-        
+        aurora.classList.remove("aurora-you-winner");
+        aurora.classList.remove("aurora-house-winner");
         whoWin.innerHTML = "";
         playAgain.style.display = "none";
-        clone1.remove();
-        clone2.remove();
+        cloneYou.remove();
+        cloneHouse.remove();
         youPicked.classList.remove("slide-left")
         housePicked.classList.remove("slide-right")
         youPicked.style.display = "none";

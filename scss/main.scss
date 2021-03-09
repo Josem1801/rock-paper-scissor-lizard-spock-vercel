@@ -14,6 +14,7 @@ body{
     @include column-center;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
 }
 
 /*-----------------RULES--------------------*/
@@ -157,7 +158,6 @@ body{
         background-position: center;
         width: 100%;
         height: 100%;
-        
     }
     
     /*Diseño de los objetos circulares del juego*/
@@ -180,13 +180,12 @@ body{
     .clone{
         top: 40%;
         left: 3%;
-        transform: scale(2.5);
+        transform: scale(2.3);
         transition: .5s;
         animation-name: down; //animation down
         animation-duration: .8s;
         animation-iteration-count: 3;
     }
-    
 
     //Shadow (Pequeña sombra que se crea)
     .shadow{
@@ -208,7 +207,7 @@ body{
         position: absolute;
         top: 40%;
         left: 84%;
-        transform: scale(2.5);
+        transform: scale(2.3);
     }
     
     //animation down
@@ -218,6 +217,32 @@ body{
         }
     }
 
+    //Mixin que crea la aurora del ganador --minxin sombra($top, $left)-- (con animacion ya incluida)
+    .sombra1.aurora-you-winner{
+        @include sombra(21%,-65%);
+        .sombra2{
+            @include sombra(0%, 0%);
+            .sombra3{
+                @include sombra(0%, 0%);   
+            }
+        }
+    }
+    //Mixin que crea la aurora del ganador --minxin sombra($top, $left)-- (con animacion ya incluida)
+    .sombra1.aurora-house-winner{
+        @include sombra(21%,97%);
+        .sombra2{
+            @include sombra(0%, 0%);
+            .sombra3{
+                @include sombra(0%, 0%);
+                
+            }
+        }
+    }
+    @keyframes sombras{
+        100%{
+            transform: scale(1.27);
+        }
+    }
     //Animaciones y estilos de "You Piked" y "The house Picked"
     .you-picked{
         @include top-button();
@@ -237,7 +262,6 @@ body{
         .translate-circle-left{ 
             left: -45% ;
         }
-
         .translate-circle-right{
             left: 117%;
         }
@@ -248,8 +272,6 @@ body{
             left: 100%;
         }
     }
-   
-
 }
 
 /*----------MediaQuery para todo el contenido de choice*/
@@ -257,14 +279,12 @@ body{
     @each $var in "rock","paper","scissor", "lizard", "spock" {
         .#{$var}{
             transform: scale(.8);
-
         }
     }
     .choice{
-
         .clone{
             top: 5%;
-            left: 5%;
+            left: 12%;
             transform: scale(1.3);
             
         }
@@ -272,13 +292,13 @@ body{
             position: absolute;
             top: 6%;
             left: 60%;
-            width: 5em;
-            height: 5em;
+            width: 6em;
+            height: 6em;
             
         }
         .shadow-replace{
             top: 5%;
-            left: 57%;
+            left: 58%;
             transform: scale(1.3);
             }
         @keyframes down{
@@ -288,7 +308,7 @@ body{
         }
        
         .you-picked{
-            left: 9%;
+            left: 16%;
             top: 46%;
             font-size: 1em;
 
@@ -297,8 +317,13 @@ body{
             width: 8em;
             left: 56%;
             top: 45%;
-            font-size: 1em;
-            
+            font-size: 1em; 
+        }
+        .sombra1.aurora-house-winner{
+            @include sombra(0%,5%);
+        }
+        .sombra1.aurora-house-winner{
+            @include sombra(0%,52.5%);
         }
     }
 }
@@ -341,11 +366,11 @@ body{
 
 @media(max-width:900px){
     .who-win{
-        bottom: 25%;
+        bottom: 30%;
 
     }
     .play-again{
-        bottom: 18%;
+        bottom: 23%;
         
     }
 }

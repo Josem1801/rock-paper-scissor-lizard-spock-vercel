@@ -53,6 +53,23 @@ $breackpoint-screen: 500px;
     }
 }
 
+@mixin sombra($top, $left){
+    position: absolute;
+    top: $top;
+    left: $left;
+    width: 15em;
+    height: 15em;
+    border-radius: 50%;
+    background:rgba($color: #ddd, $alpha: 0.1);
+    animation-name: sombras;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    @media (max-width: 800px) {
+        width: 9em;
+        height: 9em;
+    }
+}
+
 @mixin top-button {
     display: none;
     position: absolute;
