@@ -113,13 +113,18 @@ function main() {
     
     allCircle.forEach((element, indice) => {
         element.addEventListener('click', (e) => {
-            cloneYou = element.cloneNode("false")
-            choice.appendChild(cloneYou)
-            choice.appendChild(shadowDiv).classList.add("shadow")
-            choiceContainer.style.display = "none"
+            //Se crea un clon cuando el jugador da click en un circulo
+            cloneYou = element.cloneNode("false");
+            choice.appendChild(cloneYou);
+            //Se agrega la sombra en la parte superior de The house Picked
+            choice.appendChild(shadowDiv).classList.add("shadow");
+            //Se esconde el fondo
+            choiceContainer.style.display = "none";
+            //Aparecen los pequeños titutos de los contricantes
             youPicked.style.display = "inline";
             housePicked.style.display = "inline";
-            setTimeout(playGame,1, arr[indice])
+            //Pequeñisimo Timeout para hacer efecto de deslizamiento
+            setTimeout(playGame,1, arr[indice]);
         })
     });
     
