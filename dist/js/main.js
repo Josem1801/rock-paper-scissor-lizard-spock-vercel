@@ -157,26 +157,4 @@ function main() {
     })
 }
 
-
-    
-
-
-
 main()
-
-    //rock.addEventListener('click', () => {
-    //    playGame("rock")
-    //})
-    //paper.addEventListener('click', () => {
-    //    playGame("paper")
-    //})
-    //scissors.addEventListener('click', () => {
-    //    playGame("scissor")
-    //})
-    //lizard.addEventListener('click', () => {
-    //    playGame("lizard")
-    //})
-    //spock.addEventListener('click', () => {
-    //    playGame("spock")
-    //})
-
